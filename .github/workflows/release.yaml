@@ -1,6 +1,7 @@
 name: Create Release
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
@@ -16,7 +17,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+      - uses: step-security/harden-runner@rc # v2.7.0
         with:
           egress-policy: audit
 
@@ -64,7 +65,7 @@ jobs:
       COSIGN_YES: "true"
 
     steps:
-      - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+      - uses: step-security/harden-runner@rc # v2.7.0
         with:
           egress-policy: audit
 
