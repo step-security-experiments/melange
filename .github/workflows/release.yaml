@@ -51,8 +51,6 @@ jobs:
   ko-build:
     name: Release melange image
     runs-on: ubuntu-latest
-    needs:
-      - cli
 
     # https://docs.github.com/en/actions/reference/authentication-in-a-workflow
     permissions:
